@@ -49,6 +49,8 @@ body{
   position:absolute;
   top:130px;
   left:300px;
+    animation-name:rainbow;
+    animation-duration:8s;
 }
 .eye::before{
   content: "";
@@ -58,6 +60,8 @@ body{
   background-color:white;
   transform:rotate(90deg);
   bottom:70px;
+  animation-name:rainbow;
+    animation-duration:8s;
 }
 .eye::after{
   content: "";
@@ -67,6 +71,8 @@ body{
   background-color:white;
   transform:rotate(90deg);
   top:70px;
+  animation-name:rainbow;
+    animation-duration:8s;
 }
 .eye:hover{
   box-shadow: 20px 20px 90px 100px #FF5677;
@@ -77,6 +83,27 @@ img{
     position: absolute;
     left: 1050px;
 }
+@keyframes rainbow{
+    0%{
+        background-color: #4D089A;
+    }
+    25%{
+        background-color: #323EDD;
+    }
+    50%
+    {
+        background-color: #05DFD7;
+    }
+    75%
+    {
+        background-color: #000D6B;
+    }
+    100%
+    {
+        background-color: #7ECA9C;
+    }
+
+}
 img:hover{
   transform:scale(1.4);
 }
@@ -84,7 +111,7 @@ img:hover{
 </style>
 </head>
 <body>
-    <div class="eye"></div>
+    <div class="eye" id="fyi"></div>
     <div class="heart"></div>
     <img src="homeimage4.png"/>
 </body>
