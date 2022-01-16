@@ -8,6 +8,9 @@
     <style>
 body{
   background-color:#E61C5D;
+  animation-name: backdiv;
+  animation-duration: 1s;
+    animation-iteration-count: 5;
 }
 .heart{
   width:100px;
@@ -17,6 +20,9 @@ body{
   top:150px;
   left:650px;
   transform:rotate(45deg);
+  animation-name: beat;
+  animation-duration: 1s;
+  animation-iteration-count: 5;
 }
 .heart::before
 {
@@ -39,7 +45,8 @@ body{
   right:60px;
 }
 .heart:hover{
-  transform:scale(1);
+    box-shadow: 20px 20px 90px 100px #FF5677;
+    transform:scale(1);
 }
 
 .eye{
@@ -49,8 +56,10 @@ body{
   position:absolute;
   top:130px;
   left:300px;
-    animation-name:rainbow;
+  animation-name:rainbow;
     animation-duration:8s;
+    animation-fill-mode: forwards;
+
 }
 .eye::before{
   content: "";
@@ -60,8 +69,7 @@ body{
   background-color:white;
   transform:rotate(90deg);
   bottom:70px;
-  animation-name:rainbow;
-    animation-duration:8s;
+  
 }
 .eye::after{
   content: "";
@@ -71,41 +79,80 @@ body{
   background-color:white;
   transform:rotate(90deg);
   top:70px;
+
+}
+/*
+    .eye:hover{
+    box-shadow: 20px 20px 90px 100px #FF5677;
   animation-name:rainbow;
     animation-duration:8s;
-}
-.eye:hover{
+    animation-fill-mode: forwards;
+}*/
+.eye:hover
+{
   box-shadow: 20px 20px 90px 100px #FF5677;
 }
+
 img{
     width: 150px;
     height: 150px;
     position: absolute;
     left: 1050px;
+    animation-name:enlarge;
+    animation-duration: 1s;
+    animation-iteration-count: 5;
 }
 @keyframes rainbow{
     0%{
         background-color: #4D089A;
+        left:250px;
     }
     25%{
         background-color: #323EDD;
+        left:230px;
     }
     50%
     {
         background-color: #05DFD7;
+        left:210px;
     }
     75%
     {
         background-color: #000D6B;
+        right:190px;
     }
     100%
     {
-        background-color: #7ECA9C;
+        background-color: #ffffff;
+        right:-170px;
     }
 
 }
 img:hover{
   transform:scale(1.4);
+}
+@keyframes enlarge {
+    50%{
+        opacity: 70%;
+        transform:rotate(45deg);
+    }
+}
+@keyframes backdiv {
+    50%{
+        background-color: salmon;
+    }
+}
+@keyframes beat {
+    0%{
+        transform: scale(1.5) rotate(45deg);
+    }
+    50%
+    {
+        transform:scale(0.6) rotate(45deg);
+    }
+    /*scale(0.6) used here to reduce the size of heart at 50%
+    rotate(45deg) used here to rotate on its existing axis
+    */
 }
 
 </style>
